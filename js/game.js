@@ -5,7 +5,7 @@ var game = {
     data: {
         // score
         score: 0
-   },
+    },
     // Run on page load.
     "onload": function() {
         // Initialize the video.
@@ -36,7 +36,9 @@ var game = {
     // Run on game resources loaded.
     "loaded": function() {
         me.pool.register("player", game.PlayerEntity, true);
-        
+        me.pool.register("PlayerBase", game.PlayerBaseEntity, true);
+        me.pool.register("EnemyBase", game.EnemyBaseEntity, true);
+
         me.state.set(me.state.MENU, new game.TitleScreen());
         me.state.set(me.state.PLAY, new game.PlayScreen());
 

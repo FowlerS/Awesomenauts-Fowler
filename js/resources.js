@@ -4,9 +4,10 @@ game.resources = [
      * {name: "example", type:"image", src: "data/img/example.png"},
      */
 
-    {name: "player", type: "image", src: "data/img/Wizard.png"},
+    {name: "player", type: "image", src: "data/img/wizard.png"},
     {name: "background-tiles", type: "image", src: "data/img/background-tiles.png"},
     {name: "meta-tiles", type: "image", src: "data/img/meta-tiles.png"},
+    {name: "tower", type: "image", src: "data/img/tower_round.svg.png"},
     /* Atlases 
      * @example
      * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},
