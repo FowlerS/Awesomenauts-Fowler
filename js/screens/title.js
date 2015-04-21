@@ -8,7 +8,7 @@ game.TitleScreen = me.ScreenObject.extend({
         me.game.world.addChild(new (me.Renderable.extend({
             init: function() {
                 this._super(me.Renderable, 'init', [270, 240, 300, 50]);
-                this.font = new me.Font("Arial", 46, "white")
+                this.font = new me.Font("Arial", 46, "red");
 
             },
             draw: function(renderer) {
@@ -35,7 +35,7 @@ game.TitleScreen = me.ScreenObject.extend({
         me.game.world.addChild(new (me.Renderable.extend({
             init: function() {
                 this._super(me.Renderable, 'init', [380, 440, 250, 50]);
-                this.font = new me.Font("Arial", 46, "white")
+                this.font = new me.Font("Arial", 46, "red")
 
             },
             draw: function(renderer) {
@@ -54,7 +54,7 @@ game.TitleScreen = me.ScreenObject.extend({
                 game.data.exp3 = me.save.exp3;
                 game.data.exp4 = me.save.exp4;
                 me.input.releasePointerEvent('pointerdown', this);
-                me.state.change(me.state.PLAY);
+                me.state.change(me.state.SPENDEXP);
             }
 
         })));

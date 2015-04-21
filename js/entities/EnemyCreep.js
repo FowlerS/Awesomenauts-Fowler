@@ -7,14 +7,14 @@ game.EnemyCreep = me.Entity.extend({
                 spritewidth: "32",
                 spriteheight: "64",
                 getShape: function() {
-                    return (new me.Rect(0, 0, 32, 64)).toPolygon();
+                    return (new me.Rect(0, 0, 64, 64)).toPolygon();
                 }
             }]);
         this.health = 10;
         this.alwaysUpdate = true;
         this.attacking = false;
         this.now = new Date().getTime();
-        this.setVelocity(3, 20);
+        this.body.setVelocity(3, 20);
 
         this.type = "EnemyCreep";
 
@@ -31,14 +31,14 @@ game.EnemyCreep = me.Entity.extend({
         }
         this.now = new Date().getTime();
         this.body.vel.x -= this.body.accel.x * me.timer.tick;
-        me.collision.check(this, true, this.collideHandler.bind(this), true);
+        me.collision.check(this.collisionHandler.bind(this), true);
         this.body.update(delta);
 
         this._super(me.Entity, "update", [delta]);
 
         return true;
     },
-    collisonHandler: function(response) {
+    collisionHandler: function(response) {
         if (response.b.type === 'PlayerBase') {
             this.attacking = true;
             this.lastAttacking = this.now;
